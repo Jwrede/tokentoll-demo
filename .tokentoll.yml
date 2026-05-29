@@ -1,0 +1,14 @@
+# tokentoll policy for the supportbot demo.
+# See https://github.com/Jwrede/tokentoll/blob/main/docs/policy.md for the
+# full schema.
+
+calls_per_month: 10000
+
+budgets:
+  max_monthly_delta_usd: 100
+  max_callsite_monthly_usd: 50
+  max_relative_increase: 5.0
+
+policies:
+  block_unknown_models: false
+  fail_on_policy_violation: true

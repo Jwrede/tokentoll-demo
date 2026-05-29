@@ -1,0 +1,25 @@
+name: tokentoll
+on:
+  pull_request:
+    paths:
+      - "**.py"
+      - "**.ts"
+      - "**.tsx"
+      - "**.js"
+      - "**.jsx"
+      - ".tokentoll.yml"
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  cost-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: Jwrede/tokentoll@v0.8.1
+        with:
+          fail-on-policy-violation: true
