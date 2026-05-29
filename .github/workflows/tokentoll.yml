@@ -22,4 +22,5 @@ jobs:
           fetch-depth: 0
       - uses: Jwrede/tokentoll@v0.8.1
         with:
+          calls-per-month: "10000"
           fail-on-policy-violation: true
